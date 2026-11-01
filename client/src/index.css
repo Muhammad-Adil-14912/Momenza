@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-momenza-bg: #FAF9F6;
+  --color-momenza-surface: #FFFFFF;
+  --color-momenza-text: #252522;
+  --color-momenza-muted: #85847F;
+  --color-momenza-terracotta: #C47B62;
+  --color-momenza-terracotta-dark: #A9614A;
+  --color-momenza-terracotta-light: #F7EFEA;
+  --color-momenza-sage: #A7B29A;
+  --color-momenza-sage-dark: #879478;
+  --color-momenza-sage-light: #EFF3EC;
+  --color-momenza-beige: #F1EDE5;
+  --color-momenza-border: #EAE8E2;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-momenza-bg);
+    color: var(--color-momenza-text);
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #EAE8E2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C47B62;
+}
+
+/* Glass & editorial helpers */
+.editorial-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE8E2;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-card:hover {
+  border-color: #D8D4CA;
+  box-shadow: 0 10px 30px -10px rgba(37, 37, 34, 0.06);
+}

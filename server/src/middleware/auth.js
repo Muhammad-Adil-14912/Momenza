@@ -1,6 +1,10 @@
+import 'dotenv/config';
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'momenza_luxury_event_secret_key_2026_jwt_token';
+const JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET must be configured before starting the Momenza server.');
+}
 
 export const authMiddleware = (req, res, next) => {
   try {
